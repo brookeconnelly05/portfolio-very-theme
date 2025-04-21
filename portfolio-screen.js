@@ -12,10 +12,10 @@ import { I18NMixin } from "@haxtheweb/i18n-manager/lib/I18NMixin.js";
  * @demo index.html
  * @element portfolio-very-theme
  */
-export class PortfolioVeryTheme extends DDDSuper(I18NMixin(LitElement)) {
+export class PortfolioScreen extends DDDSuper(I18NMixin(LitElement)) {
 
   static get tag() {
-    return "portfolio-very-theme";
+    return "portfolio-screen";
   }
 
   constructor() {
@@ -29,7 +29,7 @@ export class PortfolioVeryTheme extends DDDSuper(I18NMixin(LitElement)) {
     this.registerLocalization({
       context: this,
       localesPath:
-        new URL("./locales/portfolio-very-theme.ar.json", import.meta.url).href +
+        new URL("./locales/portfolio-screen.ar.json", import.meta.url).href +
         "/../",
       locales: ["ar", "es", "hi", "zh"],
     });
@@ -50,10 +50,9 @@ export class PortfolioVeryTheme extends DDDSuper(I18NMixin(LitElement)) {
     
       :host {
         display: block;
-        color: var(--ddd-theme-primary);
-        background-color: var(--ddd-theme-accent);
-        font-family: var(--ddd-font-navigation);
-        scroll-behavior: smooth;
+      height: 100vh;
+      padding: 2rem;
+      background: var(--ddd-theme-default, #f4f4f4);
       }
       .wrapper {
         margin: var(--ddd-spacing-2);
@@ -82,15 +81,11 @@ export class PortfolioVeryTheme extends DDDSuper(I18NMixin(LitElement)) {
   // Lit render the HTML
   render() {
     return html`
-<portfolio-nav @nav-click=${(e) => this.scrollToSection(e.detail)}></portfolio-nav>
+    <section>
+        <h2>${this.title}</h2>
+        <slot></slot>
+      </section>
 
-<div id="screen-1"><portfolio-screen title="About"><p>Your content</p></portfolio-screen></div>
-<div id="screen-2"><portfolio-screen title="Skills"><p>Your skills</p></portfolio-screen></div>
-<div id="screen-3"><portfolio-screen title="Work"><p>Your work experience</p></portfolio-screen></div>
-<div id="screen-4"><portfolio-screen title="Projects"><p>Portfolio items</p></portfolio-screen></div>
-<div id="screen-5"><portfolio-screen title="Contact"><iframe src="example.com"></iframe></portfolio-screen></div>
-
-<scroll-button icon="arrow-upward" position="bottom right"></scroll-button>
 `
 ;
   }
@@ -104,4 +99,4 @@ export class PortfolioVeryTheme extends DDDSuper(I18NMixin(LitElement)) {
   }
 }
 
-globalThis.customElements.define(PortfolioVeryTheme.tag, PortfolioVeryTheme);
+globalThis.customElements.define(PortfolioScreen.tag, PortfolioScreen);
