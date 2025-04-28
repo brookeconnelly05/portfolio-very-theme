@@ -21,6 +21,7 @@ export class PortfolioScreen extends DDDSuper(I18NMixin(LitElement)) {
   constructor() {
     super();
     this.title = "";
+    this.pageNumber=null;
     this.t = this.t || {};
     this.t = {
       ...this.t,
@@ -40,6 +41,7 @@ export class PortfolioScreen extends DDDSuper(I18NMixin(LitElement)) {
     return {
       ...super.properties,
       title: { type: String },
+      pageNumber: {type: Number},
     };
   }
 
@@ -52,7 +54,7 @@ export class PortfolioScreen extends DDDSuper(I18NMixin(LitElement)) {
         display: block;
       height: 100vh;
       padding: 2rem;
-      background: var(--ddd-theme-default, #f4f4f4);
+      background: var(--ddd-theme-default, #5c51a8);
       }
       .wrapper {
         margin: var(--ddd-spacing-2);
@@ -78,16 +80,17 @@ export class PortfolioScreen extends DDDSuper(I18NMixin(LitElement)) {
     }
   }
 
+  
+
   // Lit render the HTML
   render() {
     return html`
-    <section>
-        <h2>${this.title}</h2>
+    <h1>${this.title}</h1>
+      <div class="wrapper">
         <slot></slot>
-      </section>
+      </div>
 
-`
-;
+`;
   }
 
   /**
