@@ -23,29 +23,68 @@
     portfolio-very-theme:hover {
       box-shadow: var(--ddd-boxShadow-sm);
     }
-    #example {
-      --portfolio-very-theme-font-size: var(--ddd-font-size-l);
-      background-color: var(--ddd-accent-2);
-      color: var(--ddd-primary-17);
-    }
+    
   </style>
   <title>portfolio-very-theme</title>
 </head>
 
 <body>
-  <div id="demo">
-    <h1>portfolio-very-theme</h1>
     <!-- this is going to do whatever the tag's defaults are -->
-    <h2>Default</h2>
-    <portfolio-very-theme>
-<portfolio-screen></portfolio-screen>
+    <div>
+      <h1>Brooke's Portfolio</h1>
+      <portfolio-very-bar>
+      </portfolio-very-bar>
+    </div>
 
+
+    <portfolio-very-theme>
+      <div id="screen-1">
+        <portfolio-screen class="about" id="1" title="About">
+          <p>This is the About section</p>
+          <p>Hello, my name is Brooke Connelly, and I am a second year Cybersecurity student. 
+            I have always had a passion for technology. When I heard about a degree in Cybersecurity 
+            I knew it was the path for me because it involved a career with technology and helping others. 
+            I am an active participant in multiple clubs such as the Competitive Cybersecurity Organization, 
+            Women and Information Science and Technology and as well as an IST diplomat. Outside of my studies, 
+            I enjoy spending time outdoors, swimming, and practicing photography.
+            My goal is to leverage my education and passion to make a meaningful impact on the world.</p>
+        </portfolio-screen>
+      </div>
+      <div id="screen-2">
+        <portfolio-screen class="Skills" id="2" title="Skills">
+          <p>This is the Skills section</p>
+        </portfolio-screen>
+      </div>
+      <div id="screen-3">
+        <portfolio-screen class="Work" id="3" title="Work">
+          <p>This is the Work section</p>
+        </portfolio-screen>
+      </div>
+      <div id="screen-4">
+        <portfolio-screen  class="Projects" id="4" title="Projects">
+          <p>This is the Projects section</p>
+        </portfolio-screen>
+      </div>
+      <div id="screen-5">
+        <portfolio-screen class="Contact" id="5" title="Contact">
+          <p>This is the contact section</p>
+          <p>Email: brookeconnelly05@gmail.com</p>
+          <p>Phone Number: 704-701-3059</p>
+          <p>
+            <a href="https://www.linkedin.com/in/brooke-connelly/">Linkend Profile</a>
+          </p>
+        </portfolio-screen>
+      </div>
     </portfolio-very-theme>
+
+
+<!-- <portfolio-screen class="about" id="1" title="About"></portfolio-screen> -->
+
     
-  </div>
   <script type="module" src="./portfolio-very-theme.js"></script>
   <script type="module" src="./portfolio-screen.js"></script>
-
+  <script type="module" src="./portfolio-very-bar.js"></script>
+  <script type="module" src="./portfolio-very-nav.js"></script>
   
   
 </body>

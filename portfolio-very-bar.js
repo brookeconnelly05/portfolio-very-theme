@@ -12,10 +12,10 @@ import { I18NMixin } from "@haxtheweb/i18n-manager/lib/I18NMixin.js";
  * @demo index.html
  * @element portfolio-very-theme
  */
-export class PortfolioVeryTheme extends DDDSuper(I18NMixin(LitElement)) {
+export class PortfolioVeryBar extends DDDSuper(I18NMixin(LitElement)) {
 
   static get tag() {
-    return "portfolio-very-theme";
+    return "portfolio-very-bar";
   }
 
   constructor() {
@@ -29,7 +29,7 @@ export class PortfolioVeryTheme extends DDDSuper(I18NMixin(LitElement)) {
     this.registerLocalization({
       context: this,
       localesPath:
-        new URL("./locales/portfolio-very-theme.ar.json", import.meta.url).href +
+        new URL("./locales/portfolio-very-bar.ar.json", import.meta.url).href +
         "/../",
       locales: ["ar", "es", "hi", "zh"],
     });
@@ -53,52 +53,51 @@ export class PortfolioVeryTheme extends DDDSuper(I18NMixin(LitElement)) {
         color: var(--ddd-theme-primary);
         background-color: var(--ddd-theme-accent);
         font-family: var(--ddd-font-navigation);
-        scroll-behavior: smooth;
       }
       .wrapper {
         margin: var(--ddd-spacing-2);
         padding: var(--ddd-spacing-4);
       }
-      h3 span {
-        font-size: var(--portfolio-very-theme-label-font-size, var(--ddd-font-size-s));
-      }
+      .header a {
+          padding: var(--ddd-spacing-3);
+          display: inline-block;
+          margin: var(--ddd-spacing-3);
+          background-color: var(--ddd-theme-default-limestoneGray);
+          color: var(--ddd-theme-default-white);
+          text-decoration: none;
+        }
+
+      .header {
+          display: flex;
+          justify-content: center;
+          align-items: center;
+          background-color: var(--ddd-theme-default-wonderPurple);
+          position: fixed;
+          top: var(--ddd-spacing-35);
+          left: var(--ddd-spacing-0);
+          height: 100px;
+          right: var(--ddd-spacing-0);
+          z-index: 1;
+        }
+      
     `];
   }
 
-  connectedCallback() {
-    super.connectedCallback();
-    window.addEventListener('nav-click', this._handleNavClick.bind(this));
-  }
+  
 
-  disconnectedCallback() {
-    window.removeEventListener('nav-click', this._handleNavClick.bind(this));
-    super.disconnectedCallback();
-  }
-
-  firstUpdated() {
-    const hash = window.location.hash;
-    if (hash) {
-      this.scrollToSection(hash.replace('#', ''));
-    }
-  }
-
-  _handleNavClick(e) {
-    const sectionId = e.detail;
-    this.scrollToSection(sectionId);
-    history.pushState(null, '', `#${sectionId}`);
-  }
-
-  scrollToSection(id) {
-    const section = document.getElementById(id);
-    if (section) {
-      section.scrollIntoView({ behavior: 'smooth' });
-    }
-  }
   // Lit render the HTML
   render() {
     return html`
- <slot></slot>
- <scroll-button icon="arrow-upward" position="bottom right"></scroll-button>
+    <div class="wrapper"> 
+    <div class="header">
+    <a href="#1">About Me</a>
+    <a href="#2">Skills</a>
+    <a href="#3">Work</a>
+    <a href="#4">Projects</a>
+    <a href="#5">Contact</a>
+    </div>
+    <slot></slot>
+    </div>
 `
 ;
   }
@@ -112,4 +111,4 @@ export class PortfolioVeryTheme extends DDDSuper(I18NMixin(LitElement)) {
   }
 }
 
-globalThis.customElements.define(PortfolioVeryTheme.tag, PortfolioVeryTheme);
+globalThis.customElements.define(PortfolioVeryBar.tag, PortfolioVeryBar);

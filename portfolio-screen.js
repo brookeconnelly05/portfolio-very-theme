@@ -54,7 +54,7 @@ export class PortfolioScreen extends DDDSuper(I18NMixin(LitElement)) {
         display: block;
       height: 100vh;
       padding: 2rem;
-      background: var(--ddd-theme-default, #5c51a8);
+      background: var(--ddd-theme-default-athertonViolet);
       }
       .wrapper {
         margin: var(--ddd-spacing-2);
