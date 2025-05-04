@@ -21,6 +21,7 @@ export class PortfolioScreen extends DDDSuper(I18NMixin(LitElement)) {
   constructor() {
     super();
     this.title = "";
+    this.color= "";
     this.pageNumber=null;
     this.t = this.t || {};
     this.t = {
@@ -42,6 +43,7 @@ export class PortfolioScreen extends DDDSuper(I18NMixin(LitElement)) {
       ...super.properties,
       title: { type: String },
       pageNumber: {type: Number},
+      color: { type: String },
     };
   }
 
@@ -54,7 +56,9 @@ export class PortfolioScreen extends DDDSuper(I18NMixin(LitElement)) {
         display: block;
       height: 100vh;
       padding: 2rem;
-      background: var(--ddd-theme-default-athertonViolet);
+      background-color: var(--bg-color, white);
+      color: white;
+      /* background: var(--ddd-theme-default-athertonViolet); */
       }
       .wrapper {
         margin: var(--ddd-spacing-2);
@@ -63,6 +67,7 @@ export class PortfolioScreen extends DDDSuper(I18NMixin(LitElement)) {
       h3 span {
         font-size: var(--portfolio-very-theme-label-font-size, var(--ddd-font-size-s));
       }
+      
     `];
   }
 
@@ -80,7 +85,11 @@ export class PortfolioScreen extends DDDSuper(I18NMixin(LitElement)) {
     }
   }
 
-  
+  updated(changedProps) {
+    if (changedProps.has('color')) {
+      this.style.setProperty('--bg-color', this.color);
+    }
+  }
 
   // Lit render the HTML
   render() {

@@ -92,7 +92,7 @@ export class PortfolioVeryBar extends DDDSuper(I18NMixin(LitElement)) {
     <div class="header">
     <a href="#1">About Me</a>
     <a href="#2">Resume</a>
-    <a href="#3">Work</a>
+    <a href="#3">Experience </a>
     <a href="#4">Projects</a>
     <a href="#5">Contact</a>
     </div>

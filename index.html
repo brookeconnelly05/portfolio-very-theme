@@ -43,6 +43,74 @@
         width: 100%;
         padding-top: 90px;
       }
+
+      /* @media (max-width: 768px) {
+        .aboutContent, .content, .profile {
+          display: flex;
+          flex-direction: column;
+        }
+      }
+        @media (max-width: 425px) {
+          img{
+            width: 50%;
+            height: 50%;
+          }
+        .aboutContent, .content {
+          display: flex;
+          flex-direction: column;
+        }
+      }
+        @media (max-width: 375px) {
+          img{
+            width: 50%;
+            height: 50%;
+          }
+        .aboutContent, .content {
+          display: flex;
+          flex-direction: column;
+        }
+      }
+      @media (max-width: 320px) {
+        img{
+            width: 50%;
+            height: 50%;
+          }
+        .aboutContent, .content {
+          display: flex;
+          flex-direction: column;
+        }
+      } */
+
+
+      @media (max-width: 768px) {
+    .aboutContent {
+      flex-direction: column;
+      text-align: center;
+    }
+
+    .description {
+      margin-left: 0;
+      font-size: var(--ddd-spacing-4);
+    }
+
+    .profile {
+      width: 30%;
+      height: 50%;
+    }
+  }
+
+  @media (max-width: 480px) {
+    .profile {
+      width: 30%;
+      height: 30%;
+    }
+
+    .description {
+      font-size: var(--ddd-spacing-3);
+    }
+  }
+        
+      
     
   </style>
   <title>portfolio-very-theme</title>
@@ -59,7 +127,7 @@
 
     <portfolio-very-theme>
       <div id="screen-1">
-        <portfolio-screen class="about" id="1" title="About">
+        <portfolio-screen class="about" id="1" title="About" color="var(--ddd-theme-default-athertonViolet)">
           <p>This is the About section</p>
           <div class="aboutContent">
           <img src="brooke_commitment.jpg" class="profile" >
@@ -74,7 +142,8 @@
         </portfolio-screen>
       </div>
       <div id="screen-2">
-        <portfolio-screen class="Resume" id="2" title="Resume">
+        <portfolio-screen class="Resume" id="2" title="Resume" color="var(--ddd-theme-default-pughBlue)">
+          <div class="content"> 
           <p>This is the Resume section</p>
           <p>Resume Overview:</p>
           <p>I am a second year Cybersecurity student with a minor in Security Risk Analysis, 
@@ -83,27 +152,59 @@
              competitions and also serve as secretary. Additionally, I am also an IST Diplomat, 
              which is the ambassador for the college of IST. Some of my skills are 
              Java, JavaScript, HTML, CSS, SQL, Azure DevOps, Ansible, Adobe Suite, and Photography. </p>
-             <a href="BrookeConnellyResumeFeb25.pdf">Link to Resume</a>
+             <a href="https://github.com/brookeconnelly05/portfolio-very-theme/blob/main/BrookeConnellyResumeFeb25.pdf">Link to Resume</a>
+            </div>
         </portfolio-screen>
       </div>
       <div id="screen-3">
-        <portfolio-screen class="Work" id="3" title="Work">
-          <p>This is the Work section</p>
+        <portfolio-screen class="Experience " id="3" title="Experience " color="var(--ddd-theme-default-discoveryCoral)">
+          <div class="content"> 
+          <p>This is the Experience  section</p>
+          <div>
+            <p>Key Work Experience:</p>
+            <ul>
+              <li>Returning Intern at Chevron as a Cybersecurity Engineer</li>
+              <li>College of IST Learning Assistant for IST140 where I hold office hours weekly and help students</li>
+              <li>Summer 2024: Chevron Cybersecurity Engineer in Houston, Texas</li>
+              <li>Code Ninjas: Helped childern ages 5-15 how to code there own video games and helped with STEM activities </li>
+            </ul>
+          </div>
+          </div>
         </portfolio-screen>
       </div>
       <div id="screen-4">
-        <portfolio-screen  class="Projects" id="4" title="Projects">
+        <portfolio-screen  class="Projects" id="4" title="Projects" color="var(--ddd-theme-default-creekTeal)">
+          <div class="content"> 
           <p>This is the Projects section</p>
+          <p>Class Projects from IST 256:</p>
+          <p>Penn State Campus card:</p>
+          <p>
+          <a href="https://ddd-card-list-mocha.vercel.app/">Vercel Link</a>
+        </p>
+        <p>
+          <a href="https://github.com/brookeconnelly05/ddd-card-list.git">Github Link</a>
+        </p>
+
+          <p>Github Contributions:</p>
+          <p>
+          <a href="https://github-rpg-contributors-one.vercel.app/">Vercel Link</a>
+        </p>
+        <p>
+          <a href="https://github.com/brookeconnelly05/github-rpg-contributors.git">Github Link</a>
+        </p>
+        </div>
         </portfolio-screen>
       </div>
       <div id="screen-5">
-        <portfolio-screen class="Contact" id="5" title="Contact">
+        <portfolio-screen class="Contact" id="5" title="Contact" color="var(--ddd-theme-default-alertImmediate)">
+          <div class="content"> 
           <p>This is the contact section</p>
           <p>Email: brookeconnelly05@gmail.com</p>
           <p>Phone Number: 704-701-3059</p>
           <p>
             <a href="https://www.linkedin.com/in/brooke-connelly/">Linkend Profile</a>
           </p>
+          </div>
         </portfolio-screen>
       </div>
     </portfolio-very-theme>

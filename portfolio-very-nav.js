@@ -107,7 +107,7 @@ export class PortfolioVeryNav extends DDDSuper(I18NMixin(LitElement)) {
 <nav>
         <button @click=${() => this._scroll('screen-1')}>About</button>
         <button @click=${() => this._scroll('screen-2')}>Resume</button>
-        <button @click=${() => this._scroll('screen-3')}>Work</button>
+        <button @click=${() => this._scroll('screen-3')}>Experience </button>
         <button @click=${() => this._scroll('screen-4')}>Projects</button>
         <button @click=${() => this._scroll('screen-5')}>Contact</button>
       </nav>
